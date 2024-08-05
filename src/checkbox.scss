@@ -1,0 +1,33 @@
+.title {
+    font-size: 7vh;
+    font-weight: bold;
+    color: azure;
+}
+
+.counter-btn {
+    background-color: salmon;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 2vw 2vh;
+    transition: all 0.5s;
+    border: 1px solid white
+}
+
+.counter-btn:hover {
+    opacity: .8;
+
+    &:active {
+        background-color: white;
+        color: salmon
+    }
+}
+
+ul {
+    #checkbox-li {
+        color: #ffc0cb;
+        height: 99%;
+        margin-right: 30px;
+        list-style: none;
+        text-align: left;
+    }
+}
