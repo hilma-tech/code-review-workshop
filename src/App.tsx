@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useRef } from "react";
+
+import CheckBoxcomponent from "./CheckBox";
+
+import "./App.css";
+
+const listItems = ["Types", "Tests", "Other thengs", "logs", "docs", "sustainibiley", "convesionS"];
 
 function App() {
-  const [count, setCount] = useState(0)
+  let { current: count } = useRef(0);
+  const title = "This page needs code review!";
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="title">title</div>
+      <div className="counter-btn dark_mode" onClick={() => {
+        console.log("clickd on span", count);
+        count++;
+      }}>There are <span>{count + 1}</span> mistakes in this code</div>
+      <ul>
+        {listItems.map((li, i) => {
+          return <CheckBoxcomponent key={i} text={li} />
+        })}
+      </ul>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
